@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>{% block title %}{% endblock %}</title>
+  {% load static %}
+  <link rel="stylesheet" type="text/css" href="{% static 'css/test.css' %}">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header>
+        <nav class="hover-underline-menu">
+          <ul class="menu align-center">
+            {% load static %}
+            <a class="logo" href="{% url 'home' %}">GalaGo</a>
+              <li><a href="{% url 'home' %}">Home</a></li>
+              <li><a href="{% url 'event_list' %}">Events</a></li>
+              <li><a href="">I'm an Organizer</a></li>
+              <li><a href="{% url 'login' %}">Login</a></li>
+          </ul>
+        </nav>
+  </header>
+
+  <main>
+    {% block extrahead %}{% endblock %}
+  </main>
+</body>
+</html>

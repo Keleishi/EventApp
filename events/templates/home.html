@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block extrahead %}
+<style>
+  h1 {
+    font-size: 3rem;
+    margin-top: 3rem;
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+
+  p {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+
+  .home {
+    display: flex;
+    justify-content: center;
+  }
+
+  .home a {
+    display: inline-block;
+    background-color: #56baed;
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: 5px;
+    margin: 0 1rem;
+    font-size: 1.2rem;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+  }
+
+  .home a:hover {
+    background-color: #3e8ebe;
+  }
+</style>
+
+<h1>Welcome to the Event Manager</h1>
+<p>Here are your options:</p>
+<div class="home">
+  <a href="{% url 'event_create' %}">Create a new event</a>
+  <a href="{% url 'event_list' %}">List all events</a>
+</div>
+
+{% endblock %}

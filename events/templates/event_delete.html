@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+
+{% block extrahead %}
+
+  <style>
+    h1 {
+      font-size: 2em;
+      margin-bottom: 20px;
+    }
+    
+    p {
+      font-size: 1.2em;
+      margin-bottom: 20px;
+    }
+    
+    form {
+      display: inline-block;
+      margin-right: 20px;
+    }
+    
+    input[type="submit"] {
+      background-color: #f44336;
+      color: white;
+      padding: 10px;
+      border-radius: 5px;
+      border: none;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    
+    input[type="submit"]:hover {
+      background-color: #d32f2f;
+    }
+    
+    a {
+      color: #f44336;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    
+    a:hover {
+      color: #d32f2f;
+    }
+  </style>
+  <h1>Delete Event</h1>
+  <p>Are you sure you want to delete ?</p>
+  <form method="post">
+    {% csrf_token %}
+    <input type="submit" value="Yes, delete">
+  </form>
+  <a href="{% url 'events:event_list' %}">No, cancel</a>
+{% endblock %}

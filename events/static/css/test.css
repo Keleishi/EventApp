@@ -1,0 +1,73 @@
+/* pour la page base.html */
+@import url('https://fonts.googleapis.com/css?family=Poppins');
+
+body {
+  font-family: "Poppins", sans-serif;
+  height: 100vh;
+  font-size: 20px;
+}
+
+* {
+  margin:0;
+  padding:0;
+}
+
+.logo {
+    font-family: 'Righteous', cursive;
+    font-size: 32px;
+    font-weight: bold;
+    margin-left: 20px;
+}
+
+
+.hover-underline-menu {
+    width: 100%;
+  }
+  
+  .hover-underline-menu ul {
+    padding: 1rem 0;
+  }
+
+  .hover-underline-menu ul li {
+    display: inline;
+  }
+  
+  .hover-underline-menu .menu {
+    background-color: #fff;
+  }
+  
+  .hover-underline-menu .menu a {
+    color: #2C3840;
+    padding: 1rem 2rem;
+    display: inline-block;
+    text-decoration: none;
+  }
+  
+  .hover-underline-menu .menu li a {
+    position: relative;
+  }
+  
+  .hover-underline-menu .menu li a::after {
+    content: "";
+    position: absolute;
+    top: calc(100% - 0.125rem);
+    border-bottom: 0.125rem solid #2C3840;;
+    left: 50%;
+    right: 50%;
+    transition: all 0.5s ease;
+  }
+  
+  .hover-underline-menu .menu li a:hover::after {
+    left: 0;
+    right: 0;
+    transition: all 0.5s ease;
+  }
+
+
+
+main {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 20px;
+}
+

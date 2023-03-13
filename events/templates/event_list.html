@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+
+{% block title %}List of Events{% endblock %}
+
+{% block extrahead %}
+<style>
+  .event-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-gap: 20px;
+    margin-top: 30px;
+  }
+  
+  .event {
+    background-color: #f2f2f2;
+    border-radius: 5px;
+    padding: 20px;
+    transition: box-shadow 0.3s;
+  }
+  
+  .event:hover {
+    box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.3);
+  }
+  
+  .event h2 {
+    margin-top: 0;
+    font-size: 24px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+  }
+  
+  .event p {
+    margin-bottom: 10px;
+    font-size: 16px;
+  }
+  
+  .event a {
+    color: #4CAF50;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+  }
+  
+  .event a:hover {
+    border-bottom: 1px solid #4CAF50;
+    padding-bottom: 3px;
+  }
+</style>
+  <h1>List of Events</h1>
+  <div class="event-list">
+    {% for event in events %}
+      <div class="event">
+        <h2>{{ event.name }}</h2>
+        <p>{{ event.date }}</p>
+        <p>Location: {{ event.location }}</p>
+        <a href="{% url 'event_detail' event.id %}">View details</a>
+      </div>
+    {% empty %}
+      <p>No events yet.</p>
+    {% endfor %}
+  </div>
+{% endblock %}

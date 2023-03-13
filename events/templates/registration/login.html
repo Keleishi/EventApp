@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block title %}Login{% endblock %}
+
+{% block extrahead %}
+{% load static %}
+<link rel="stylesheet" type="text/css" href="../../static/css/log.css">
+<link rel="stylesheet" type="text/css" href="../../static/css/button.css">
+
+{% if user.is_authenticated %}
+    You are already log in ! Good to see you <b>{{ user.username }}</b>!
+    <p><a href="{% url 'logout' %}">Log Out</a></p>
+
+{% else %}
+    <div class="wrapper fadeInDown">
+        <div id="formContent">
+            <h2 class="active fadeIn first"><a> Sign In </a></h2>
+            <h2 class="inactive fadeIn first underlineHover"><a href="{% url 'signup' %}"> Sign Up </a></h2>
+
+            <form method="post" class="fadeIn second">
+                {% csrf_token %}
+                {{ form.username.label_tag }}
+                {{ form.username }}
+                {{ form.password.label_tag }}
+                <div class="insert">{{ form.password }}</div>
+                <div class="wrap">
+                    <button type="submit" class="button fadeIn fourth" value="Log In">Log In</button>
+                </div>
+            </form> 
+
+            <div id="formFooter">
+                <a class="underlineHover" href="#">Forgot Password?</a>
+            </div>
+        </div>
+    </div>
+
+    First time on GalaGo ? <p><a class="onelink" href="{% url 'signup' %}">Sign Up</a></p>
+    {% endif %}
+{% endblock %}

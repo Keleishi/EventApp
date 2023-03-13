@@ -1,0 +1,76 @@
+{% extends 'base.html' %}
+
+{% block name %}{{ event.name }}{% endblock %}
+
+{% block extrahead %}
+
+<style>
+  .event-header {
+    background-color: #56baed;
+    color: white;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .event-details {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 20px;
+    background-color: #f6f6f6;
+    border-radius: 5px;
+  }
+  
+  .event-details p {
+    margin-bottom: 10px;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 10px;
+  }
+  
+  .event-actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+  }
+  
+  .event-actions a {
+    padding: 10px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+  }
+
+  .event-actions a.update {
+    background-color: #56baed;
+    color: white;
+  }
+
+  .event-actions a.update:hover {
+    background-color: #3e8ebe;
+  }
+  
+  .event-actions a.delete {
+    background-color: #f44336;
+    color: white;
+  }
+
+  .event-actions a.delete:hover {
+    background-color: #d32f2f;
+  }
+</style>
+
+  <div class="event-header">
+    <h1>{{ event.name }}</h1>
+  </div>
+
+  <div class="event-details">
+    <p><strong>Description :</strong> {{ event.description }}</p>
+    <p><strong>Location :</strong> {{ event.location }}</p>
+    <p><strong>Event organizer :</strong> {{ event.organizer }}</p>
+    <p><strong>Start Time :</strong> {{ event.date }}</p>
+  </div>
+
+  <div class="event-actions">
+    <a href="{% url 'event_update' pk=event.pk %}" class="update">Update</a>
+    <a href="{% url 'event_delete' pk=event.pk %}" class="delete">Delete</a>
+  </div>
+{% endblock %}
