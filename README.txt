@@ -18,4 +18,18 @@ Recently, I have added a new feature to the application - a system of login. Thi
 
 To implement this feature, I added a new model called User, which represents the user accounts. I also created the necessary views and templates for user registration, login, and profile management. The authentication and authorization process was implemented using Django's built-in authentication system and access control mechanisms.
 
-With this new feature, "GalaGo" has become a more comprehensive and user-friendly application for event management. 
+With this new feature, "GalaGo" has become a more comprehensive and user-friendly application for event management.
+
+
+// NEW FOR CA3 //
+
+I have added both manual and automated testing to ensure the quality and correctness of the application.
+
+The testing methodology for the Organizer model in this application includes both manual and automatic tests. The automatic tests were implemented using the Django test framework and cover various aspects of the Organizer model, such as the correct labeling of its fields, the maximum length of its fields, and the correct string representation of the object. Additionally, both positive and negative tests were implemented to ensure that the model correctly handles valid and invalid data.
+
+In terms of test coverage, the Organizer model tests cover the majority of the functionality of the model. However, further tests can be added in the future to ensure even better test coverage.
+
+Furthermore, I have configured the system to use a configuration file for development and another file for testing. This allows for easy and efficient testing, as the test configuration file can be set up to use a separate database and other settings from the development configuration file. This separation of concerns ensures that the tests are conducted in an isolated environment and do not affect the development environment.
+
+We can run the tests by using : py runtests.py test
+

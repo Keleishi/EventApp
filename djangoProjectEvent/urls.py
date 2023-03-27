@@ -27,7 +27,7 @@ urlpatterns = [
     path('events/<int:pk>/delete/', event_delete, name='event_delete'),
 
     path('', include('events.urls')),
-    path('admin/', admin.site.urls),
+    path('TheRealadmin/', admin.site.urls), #NEW
 
     path("accounts/", include("django.contrib.auth.urls")),
     path("accounts/", include("accounts.urls")),
